@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Geometric modeling</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <nav>
+          <a href="#" class="selected">Простое 3D</a>
+          <a href="#">Сегменты кривой Безье</a>
+        </nav>
+        <div class="contact">
+          <p>НМТ-463930</p>
+          <p>Искрицкий А.И.</p>
+          <p><a href="#">GitHub</a></p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="main-container">
+        <div class="scene">
+          <canvas id="canvas" width="700" height="500"></canvas>
+        </div>
+      </section>
+      <aside>
+        <input type="submit" id="draw" onclick="Draw()">
+      </aside>
+    </main>
+    <script src="draw.js"></script>
+  </body>
+</html>
