@@ -23,13 +23,18 @@
     <main>
       <section class="main-container">
         <div class="scene">
-          <canvas id="canvas" width="700" height="500"></canvas>
+          <canvas id="c"></canvas>
         </div>
       </section>
       <aside>
-        <input type="submit" id="draw" onclick="Draw()">
+        <input type="file" id="open-file" accept="txt">
+        <input type="button" value="Отобразить" id="draw">
+        <textarea name="" id="content-file" cols="30" rows="10"></textarea>
       </aside>
     </main>
-    <script src="draw.js"></script>
+    <script src="./draw-library.js"></script>
+    <script type='module' src="./lib/three.min.js"></script>
+    <script type='module' src="./lib/OrbitControls.js"></script>
+    <script type='module' src="test.js"></script>
   </body>
 </html>
