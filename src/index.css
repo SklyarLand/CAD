@@ -52,8 +52,7 @@ main{
   width: 100%;
   height: calc( 100% - 100px);
   background-color: #006957;
-  display: grid;
-  grid-template-columns: 70% 30%;
+  display: flex;
 }
 section.main-container{
   margin: 5px;
