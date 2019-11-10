@@ -4,17 +4,27 @@ import { OrbitControls } from './lib/OrbitControls.js';
 
 
 class Drawer {
-  constructor(filetxt) {//создает в массив точек и ребер
-    this.array = filetxt.split('\n');
+  constructor(pointsTxt, linesTxt) {//создает в массив точек и ребер
+    let arrayP = pointsTxt.split('\n');
+    let arrayL = linesTxt.split('\n');
+
     this.points = [];
     this.links = [];
-    for (let i = 0; i < this.array.length; i++) {
-      let subarr = this.array[i].split(',');
-      if (subarr.length > 1 && subarr.length < 3) this.links.push(subarr);
-      if (subarr.length > 3 && subarr.length < 5) this.points.push(subarr);
+    for (let i = 0; i < arrayP.length; i++) {
+      if (arrayP[i] != '') {
+        let subarr = arrayP[i].split(',');
+        this.points.push(subarr);
+      }
+    }
+    for (let i = 0; i < arrayL.length; i++) {
+      if (arrayL[i] != '') {
+        let subarr = arrayL[i].split(',');
+        this.links.push(subarr);
+      }
+
     }
   }
-  
+
   main() {
     const canvas = document.querySelector('#c');
     const renderer = new THREE.WebGLRenderer({ canvas });
@@ -102,8 +112,9 @@ class Drawer {
 //-----------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------
 
-document.getElementById('draw').onclick = function() {
-    let text = document.getElementById('content-file').value;
-    let drawer = new Drawer(text);
-    drawer.main();
+document.getElementById('draw').onclick = function () {
+  let points = document.getElementById('points').value;
+  let lines = document.getElementById('lines').value;
+  let drawer = new Drawer(points, lines);
+  drawer.main();
 }

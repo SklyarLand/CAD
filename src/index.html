@@ -22,14 +22,16 @@
     </header>
     <main>
       <section class="main-container">
-        <div class="scene">
           <canvas id="c"></canvas>
-        </div>
       </section>
       <aside>
-        <input type="file" id="open-file" accept="txt">
-        <input type="button" value="Отобразить" id="draw">
-        <textarea name="" id="content-file" cols="30" rows="10"></textarea>
+        <div class="wrapper">
+            <input type="file" id="open-file" accept="txt">
+            <label for="open-file" id='o-f'>Открыть файл</label>
+            <div id="points-container"><p>Точки</p><textarea name="" id="points" cols="30" rows="10"></textarea></div>
+            <div id="lines-container"><p>Линии</p><textarea name="" id="lines" cols="30" rows="10"></textarea></div>
+            <input type="button" value="Отобразить" id="draw">
+        </div>
       </aside>
     </main>
     <script src="./additional.js"></script>

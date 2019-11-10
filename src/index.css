@@ -49,36 +49,66 @@ p{
 }
 
 main{
-  width: 100%;
+  padding : 10px;
   height: calc( 100% - 100px);
   background-color: #006957;
-  display: flex;
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-column-gap: 10px;
 }
 section.main-container{
-  margin: 5px;
-  width: 700px;
-  height: calc( 100% - 15px);
   background-color: #1E796A;
   border-radius: 10px;
-  padding: 0 30px;
 }
-.scene{
-  margin: 20px auto;
-  height: calc( 100% - 40px );
-  background-color: #ffffff;
-}
+
 canvas{
-  height: 100%;
-  width: 100%;
+  margin: 50px auto;
+  height: 440px;
+  width: 880px;
   display: block;
 }
 aside{
-  margin: 5px;
   background-color: #1E796A;
   border-radius: 10px;
+  color: white;
+}
+.wrapper{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(8, 60px);;
+  grid-gap: 5px;
 }
 textarea{
-  height: 200px;
-  width: 120px;
+  width: calc(100% - 6px);
+  margin:0;
+  height: 80%;
 }
-
+#points-container{
+  grid-column: 4/6;
+  grid-row: 1/5;
+  display: block;
+}
+#lines-container{
+  grid-column: 6;
+  grid-row: 1/5;
+}
+#o-f{
+  font-size: 20px;
+  border-radius: 5px;
+  background: #FF7C00;
+  padding: 10px;
+  margin: 0 0 auto 0;
+  grid-column: 1/3;
+  grid-row: 1;
+}
+#open-file{
+  display: none;
+}
+#draw{
+  grid-column: 1/3;
+  grid-row: 2;
+  margin: 0 0 auto 0;
+  padding: 10px;
+  border-radius: 5px;
+}
